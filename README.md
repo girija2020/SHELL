@@ -28,7 +28,7 @@ shell executes the command directly, without invoking another program. Builtin
 commands are necessary to implement functionality impossible or inconvenient to obtain
 with separate utilities.
 Implemented echo pwd and cd
-Example:
+Example: 
 <Name@UBUNTU:~> echo "abc 'ac' abc"
 “abc ‘ac’ abc”
 
@@ -118,20 +118,20 @@ Operating Systems and Networks | Monsoon 2021
 Specification 1: Input/Output Redirection
 Using the symbols <, > and >>, the output of commands, usually written to stdout, ​can be redirected to another file, or the input taken from a file other than ​stdin​. Both input and output redirection can be used simultaneously.
 Example:
-# output redirection
+output redirection
 <tux@linux:~> echo "hello" > output.txt
-# input redirection
+input redirection
 <tux@linux:~> cat < example.txt
-# input/output redirection
+input/output redirection
 <tux@linux:~> sort < file1.txt > lines_sorted.txt
 
 Specification 2: Command Pipelines
 A pipe, identified by | , redirects the output of the command on the left as input to the command on the right. One or more commands can be piped as the following
 examples show.
 Example:
-# two commands
+two commands
 <tux@linux:~> cat file.txt | wc
-# three commands
+three commands
 <tux@linux:~> cat sample2.txt | head -7 | tail -5
 
 Specification 3: I/O Redirection within Command Pipelines
@@ -149,9 +149,7 @@ Example:<tux@linux:~> jobs
 [2] Running firefox [430]
 [4] Stopped gedit [3213]
 [3] Stopped vim [3211]
-# These are all sorted in alphabetical order.
-# The job number indicates the order in which they were
-# created.
+
 <tux@linux:~> jobs -r
 [1] Running emacs assign1.txt [221]
 [2] Running firefox [430]
@@ -162,16 +160,16 @@ Example:<tux@linux:~> jobs
 2. sig Takes the job number (assigned by your shell) of a running job and sends the signal corresponding to s ​ ignal number​ to that process.
 Example:
 <tux@linux:~> sig 2 9
-# sends SIGKILL (signal number 9) to the process firefox (job # list as per the previous example), causing it to terminate
+sends SIGKILL (signal number 9) to the process firefox (job # list as per the previous example), causing it to terminate
 3. fg Brings the running or stopped background job corresponding to ​job number​ to the foreground, and changes its state to ​running .​
 Example:
 
 <tux@linux:~> fg 4
-# brings [4] gedit to the foreground
+brings [4] gedit to the foreground
 4. bg Changes the state of a stopped background job to running (in the background).
 Example:
 <tux@linux:~> bg 3
-# Changes the state of [3] vim to running (in the # background).
+Changes the state of [3] vim to running (in the # background).
 
 Specification 5: Signal Handling
 1. CTRL-Z It pushes any currently running foreground job into the background, and change its state from running to stopped. This has no effect on the
