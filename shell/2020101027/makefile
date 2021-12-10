@@ -1,0 +1,2 @@
+makeshell: parse.c main.c cd.c ls.c prompt.c execvp.c pinf.c jobs.c sign.c fg.c bg.c redirect.c
+	gcc -o makeshell parse.c main.c cd.c ls.c prompt.c execvp.c pinf.c jobs.c sign.c fg.c bg.c redirect.c -I.
