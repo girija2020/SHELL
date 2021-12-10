@@ -11,15 +11,15 @@ When you execute your code, a shell prompt of the following form will appear alo
 it.
 <username@system_name:curr_dir>
 Example:
-<Name@UBUNTU:~>
+  <Name@UBUNTU:~>
 The directory from which the shell is invoked will be the home directory of the shell and
 will be indicated by "~". If the user executes "cd" i.e changes the directory, then the
 corresponding change will be reflected in the shell as well.
 Example:
 ./a.out
-<Name@UBUNTU:~> cd newdir/test
-<Name@UBUNTU:~/newdir/test> cd ../..
-<Name@UBUNTU:~>
+  <Name@UBUNTU:~> cd newdir/test
+  <Name@UBUNTU:~/newdir/test> cd ../..
+  <Name@UBUNTU:~>
 
 Specification 2: Builtin commands
 Builtin commands are contained within the shell itself.
@@ -29,24 +29,24 @@ commands are necessary to implement functionality impossible or inconvenient to 
 with separate utilities.
 Implemented echo pwd and cd
 Example: 
-<Name@UBUNTU:~> echo "abc 'ac' abc"
-“abc ‘ac’ abc”
+  <Name@UBUNTU:~> echo "abc 'ac' abc"
+  “abc ‘ac’ abc”
 
 Specification 3: ls command
 Implemented the ls command with its two flags “-a” and “-l”. The following cases are 
 handled:
-● ls
-● ls -a
-● ls -l
-● ls .
-● ls ..
-● ls ~
-● ls -a -l
-● ls -la / ls -al
-● ls <Directory/File_name>
-● ls -<flags> <Directory/File_name>
+  ● ls
+  ● ls -a
+  ● ls -l
+  ● ls .
+  ● ls ..
+  ● ls ~
+  ● ls -a -l
+  ● ls -la / ls -al
+  ● ls <Directory/File_name>
+  ● ls -<flags> <Directory/File_name>
 Example:
-<Name@UBUNTU:~> ls -al test_dir
+  <Name@UBUNTU:~> ls -al test_dir
 
 Specification 4: System commands with and without arguments
 All other commands are treated as system commands like emacs, vi, and so on. The shell
@@ -60,15 +60,15 @@ process to exit. It will keep taking other user commands. Whenever a new backgro
 process is started, it print the PID of the newly created background process on your shell
 also.
 Example:
-<Name@UBUNTU:~> gedit &
-456
-<Name@UBUNTU:~> ls -l -a
-.
-.
-. Execute other commands
-.
-.
-<Name@UBUNTU:~> echo hello
+  <Name@UBUNTU:~> gedit &
+  456
+  <Name@UBUNTU:~> ls -l -a
+  .
+  .
+  . Execute other commands
+  .
+  .
+  <Name@UBUNTU:~> echo hello
 
 Specification 5: pinfo
 pid -- 231
@@ -94,23 +94,23 @@ If the background process exits then the shell displays the appropriate message 
 user.
 Example:
 After gedit exits, your shell program should check the exit status and print it on stderr.
-<Name@UBUNTU:~> gedit &
-<Name@UBUNTU:~> cd test
-<Name@UBUNTU:~/test>
-gedit with pid 456 exited normally/abnormally
+  <Name@UBUNTU:~> gedit &
+  <Name@UBUNTU:~> cd test
+  <Name@UBUNTU:~/test>
+  gedit with pid 456 exited normally/abnormally
 
 Specification 7: repeat Command
 Implementing the repeat command. The command is responsible for executing the given
 instruction multiple times. The first argument to the command specifies the number of
 times the following command is to be run.
 Example:
-<Name@UBUNTU:~/newdir/test> repeat 2 cd ..
-<Name@UBUNTU:~> repeat 3 echo hello
-hello
-hello
-hello
-<Name@UBUNTU:~> repeat 2 sleep 4 ( Sleep for 4 seconds twice)
-<Name@UBUNTU:~>
+  <Name@UBUNTU:~/newdir/test> repeat 2 cd ..
+  <Name@UBUNTU:~> repeat 3 echo hello
+  hello
+  hello
+  hello
+  <Name@UBUNTU:~> repeat 2 sleep 4 ( Sleep for 4 seconds twice)
+  <Name@UBUNTU:~>
   
 
 Assignment 3
@@ -121,24 +121,24 @@ Example:
 output redirection
 <tux@linux:~> echo "hello" > output.txt
 input redirection
-<tux@linux:~> cat < example.txt
+  <tux@linux:~> cat < example.txt
 input/output redirection
-<tux@linux:~> sort < file1.txt > lines_sorted.txt
+  <tux@linux:~> sort < file1.txt > lines_sorted.txt
 
 Specification 2: Command Pipelines
 A pipe, identified by | , redirects the output of the command on the left as input to the command on the right. One or more commands can be piped as the following
 examples show.
 Example:
 two commands
-<tux@linux:~> cat file.txt | wc
+  <tux@linux:~> cat file.txt | wc
 three commands
-<tux@linux:~> cat sample2.txt | head -7 | tail -5
+  <tux@linux:~> cat sample2.txt | head -7 | tail -5
 
 Specification 3: I/O Redirection within Command Pipelines
 Input/output redirection can occur within command pipelines, as the examples below show.
 Example:
-<tux@linux:~> ls | grep *.txt > out.txt
-<tux@linux:~> cat < in.txt | wc -l > lines.txt
+  <tux@linux:~> ls | grep *.txt > out.txt
+  <tux@linux:~> cat < in.txt | wc -l > lines.txt
 
 Specification 4: User-defined Commands
 
