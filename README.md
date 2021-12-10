@@ -14,6 +14,7 @@ Example:
   <Name@UBUNTU:~>
 If the user executes "cd" i.e changes the directory, then the
 corresponding change will be reflected in the shell as well.
+
 Example:
 ./a.out
   <Name@UBUNTU:~> cd newdir/test
@@ -27,6 +28,7 @@ shell executes the command directly, without invoking another program. Builtin
 commands are necessary to implement functionality impossible or inconvenient to obtain
 with separate utilities.
 Implemented echo pwd and cd
+
 Example: 
   <Name@UBUNTU:~> echo "abc 'ac' abc"
   “abc ‘ac’ abc”
@@ -34,6 +36,7 @@ Example:
 Specification 3: ls command
 Implemented the ls command with its two flags “-a” and “-l”. The following cases are 
 handled:
+
   ● ls
   ● ls -a
   ● ls -l
@@ -45,6 +48,7 @@ handled:
   ● ls <Directory/File_name>
   ● ls -<flags> <Directory/File_name>
 Example:
+  
   <Name@UBUNTU:~> ls -al test_dir
 
 Specification 4: System commands with and without arguments
@@ -59,6 +63,7 @@ process to exit. It will keep taking other user commands. Whenever a new backgro
 process is started, it print the PID of the newly created background process on your shell
 also.
 Example:
+    
   <Name@UBUNTU:~> gedit &
   456
   <Name@UBUNTU:~> ls -l -a
@@ -92,7 +97,7 @@ Specification 6: Finished Background Processes
 If the background process exits then the shell displays the appropriate message to the
 user.
 Example:
-After gedit exits, your shell program should check the exit status and print it on stderr.
+  
   <Name@UBUNTU:~> gedit &
   <Name@UBUNTU:~> cd test
   <Name@UBUNTU:~/test>
@@ -103,6 +108,7 @@ Implementing the repeat command. The command is responsible for executing the gi
 instruction multiple times. The first argument to the command specifies the number of
 times the following command is to be run.
 Example:
+    
   <Name@UBUNTU:~/newdir/test> repeat 2 cd ..
   <Name@UBUNTU:~> repeat 3 echo hello
   hello
@@ -117,6 +123,7 @@ Operating Systems and Networks | Monsoon 2021
 Specification 1: Input/Output Redirection
 Using the symbols <, > and >>, the output of commands, usually written to stdout, ​can be redirected to another file, or the input taken from a file other than ​stdin​. Both input and output redirection can be used simultaneously.
 Example:
+    
 output redirection
 <tux@linux:~> echo "hello" > output.txt
 input redirection
@@ -128,6 +135,7 @@ Specification 2: Command Pipelines
 A pipe, identified by | , redirects the output of the command on the left as input to the command on the right. One or more commands can be piped as the following
 examples show.
 Example:
+    
 two commands
   <tux@linux:~> cat file.txt | wc
 three commands
@@ -158,6 +166,7 @@ Example:<tux@linux:~> jobs
 
 2. sig Takes the job number (assigned by your shell) of a running job and sends the signal corresponding to s ​ ignal number​ to that process.
 Example:
+  
 <tux@linux:~> sig 2 9
 sends SIGKILL (signal number 9) to the process firefox (job # list as per the previous example), causing it to terminate
 3. fg Brings the running or stopped background job corresponding to ​job number​ to the foreground, and changes its state to ​running .​
@@ -167,6 +176,7 @@ Example:
 brings [4] gedit to the foreground
 4. bg Changes the state of a stopped background job to running (in the background).
 Example:
+  
 <tux@linux:~> bg 3
 Changes the state of [3] vim to running (in the # background).
 
