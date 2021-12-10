@@ -12,8 +12,7 @@ it.
 <username@system_name:curr_dir>
 Example:
   <Name@UBUNTU:~>
-The directory from which the shell is invoked will be the home directory of the shell and
-will be indicated by "~". If the user executes "cd" i.e changes the directory, then the
+If the user executes "cd" i.e changes the directory, then the
 corresponding change will be reflected in the shell as well.
 Example:
 ./a.out
